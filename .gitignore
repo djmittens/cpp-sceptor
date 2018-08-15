@@ -1,3 +1,17 @@
+# CMake garbage
+.vscode/
+build/
+Win32/
+Tutorial.dir/
+Debug/
+CmakeFiles/
+*.cmake
+CmakeCache.txt
+
+# Visual studio stuff
+*.sln
+*.vcxproj*
+
 # Prerequisites
 *.d
 
