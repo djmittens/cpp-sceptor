@@ -16,6 +16,7 @@ compile_commands*
 # Visual studio stuff
 *.sln
 *.vcxproj*
+.vs/
 
 # Prerequisites
 *.d
