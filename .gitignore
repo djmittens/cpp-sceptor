@@ -4,9 +4,14 @@ build/
 Win32/
 Tutorial.dir/
 Debug/
-CmakeFiles/
+CMakeFiles/
 *.cmake
 CmakeCache.txt
+
+# Linux Stuff
+Makefile
+CppSceptor
+compile_commands*
 
 # Visual studio stuff
 *.sln
