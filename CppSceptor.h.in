@@ -1,3 +1,4 @@
 // Some configured options from the build.
 #define CppSceptor_VERSION_MAJOR @CppSceptor_VERSION_MAJOR@
 #define CppSceptor_VERSION_MINOR @CppSceptor_VERSION_MINOR@
+#cmakedefine USE_MYMATH

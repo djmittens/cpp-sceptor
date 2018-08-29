@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifdef USE_MYMATH
+#include "MathFunctions.h"
+#endif
+
+
 int main(int argc, char **argv) {
   // Are there enough arguments?
   if (argc < 2) {
@@ -13,8 +18,14 @@ int main(int argc, char **argv) {
   }
 
   double inputValue = atof(argv[1]);
+#ifdef USE_MYMATH
+  fprintf(stdout, "Using my library !");
+  double outputValue = mysqrt(inputValue);
+#else
   double outputValue = sqrt(inputValue);
+#endif
 
   fprintf(stdout, "The square root of %g is %g\n", inputValue, outputValue);
+
   return 0;
 }
