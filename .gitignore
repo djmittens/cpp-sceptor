@@ -7,6 +7,8 @@ Debug/
 CMakeFiles/
 *.cmake
 CmakeCache.txt
+DartConfiguration.tcl
+Testing/
 
 # Linux Stuff
 Makefile
