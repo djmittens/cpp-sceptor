@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 
   double inputValue = atof(argv[1]);
 #ifdef USE_MYMATH
-  fprintf(stdout, "Using my library !");
+  fprintf(stdout, "Using my library !\n");
   double outputValue = mysqrt(inputValue);
 #else
   double outputValue = sqrt(inputValue);

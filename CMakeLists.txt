@@ -4,6 +4,10 @@ project (CppSceptor)
 set(CppSceptor_VERSION_MAJOR 1)
 set(CppSceptor_VERSION_MINOR 1)
 
+# Check if the system provides log and exp functions
+include(${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
+check_function_exists(log HAVE_LOG)
+check_function_exists(exp HAVE_EXP)
 
 # Optional library
 option( USE_MYMATH "Use my shitty approximation for square root" ON)
