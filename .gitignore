@@ -10,6 +10,9 @@ CmakeCache.txt
 DartConfiguration.tcl
 Testing/
 
+# Gtest garbage
+test_detail.xml
+
 # Linux Stuff
 Makefile
 CppSceptor
