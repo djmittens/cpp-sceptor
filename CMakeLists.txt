@@ -41,3 +41,14 @@ include(CTest)
 
 # does the application run?
 add_test (CppSceptorRuns CppSceptor 25)
+
+
+##### Packaging with CPack step 6
+
+include(InstallRequiredSystemLibraries)
+
+set (CPACK_RESOURCE_FILE LICENSE
+	"${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+set(CPACK_PACKAGE_VERSION_MAJOR "${CppSceptor_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${CppSceptor_VERSION_MINOR}")
+include (CPack)
