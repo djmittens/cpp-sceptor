@@ -1,14 +1,3 @@
-# CMake garbage
-.vscode/
-build/
-Win32/
-Tutorial.dir/
-Debug/
-CMakeFiles/
-*.cmake
-CmakeCache.txt
-DartConfiguration.tcl
-Testing/
 
 # Gtest garbage
 test_detail.xml
@@ -18,10 +7,12 @@ Makefile
 CppSceptor
 compile_commands*
 
-# Visual studio stuff
+# Visual Studio Community/Code stuff
 *.sln
 *.vcxproj*
 .vs/
+.vscode/
+build/
 
 # Prerequisites
 *.d
