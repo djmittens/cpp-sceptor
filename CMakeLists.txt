@@ -47,6 +47,22 @@ include(CTest)
 # does the application run?
 add_test (CppSceptorRuns CppSceptor 25)
 
+
+# MSVC linking junk
+if(MSVC) 
+  set(variables 
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_CXX_FLAGS_RELEASE
+	CMAKE_CXX_FLAGS_RELWITHDEBINFO
+	CMAKE_CXX_FLAGS_MINSIZEREL
+  )
+  foreach(variable ${variables})
+	if(${variable} MATCHES "/MD")
+	  string(REGEX REPLACE "/MD" "/MT" ${variable} "${${variable}}")
+	endif()
+  endforeach()
+endif()
+
 # GTest testing
 if(test)
 
@@ -71,6 +87,7 @@ if(test)
 	# Or you can just ommit the name / command
 	add_test( that-other-test-I-made runUnitTests)
 endif()
+
 
 
 ##### Packaging with CPack step 6
