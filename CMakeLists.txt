@@ -50,28 +50,32 @@ add_test (CppSceptorRuns CppSceptor 25)
 
 # MSVC linking junk
 if(MSVC) 
-  set(variables 
-    CMAKE_CXX_FLAGS_DEBUG
-    CMAKE_CXX_FLAGS_RELEASE
-	CMAKE_CXX_FLAGS_RELWITHDEBINFO
-	CMAKE_CXX_FLAGS_MINSIZEREL
-  )
-  foreach(variable ${variables})
-	if(${variable} MATCHES "/MD")
-	  string(REGEX REPLACE "/MD" "/MT" ${variable} "${${variable}}")
-	endif()
-  endforeach()
+#   set(variables 
+#     CMAKE_CXX_FLAGS_DEBUG
+#     CMAKE_CXX_FLAGS_RELEASE
+# 	CMAKE_CXX_FLAGS_RELWITHDEBINFO
+# 	CMAKE_CXX_FLAGS_MINSIZEREL
+#   )
+#   foreach(variable ${variables})
+# 	if(${variable} MATCHES "/MD")
+# 	  string(REGEX REPLACE "/MD" "/MT" ${variable} "${${variable}}")
+# 	endif()
+#   endforeach()
 endif()
 
 # GTest testing
 if(test)
+	if(MSVC)
+	#This is hilarious because this is only a confusion on windows
+		set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+	endif(MSVC)
 
 	#this little guy adds the cmake project from gtest
 	add_subdirectory(lib/googletest-release-1.8.1)
 	enable_testing()
-
 	# Include the library or something like that, which was defined in the gtest project we included.
 	include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+
 
 	# UNIT TESTS
 	add_executable(runUnitTests test/CppSceptorTest.cpp)
