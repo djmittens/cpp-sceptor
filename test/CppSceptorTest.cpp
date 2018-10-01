@@ -7,5 +7,5 @@
 TEST(MySqrt, DoestStuff) {
     auto a = mysqrt(16);
 
-    EXPECT_EQ(a, 4);
+    EXPECT_EQ(a, 5);
 }
